@@ -50,7 +50,6 @@ function Hero() {
   const { scrollYProgress } = useScroll({ target: ref, offset: ["start start", "end start"] });
   const y = useTransform(scrollYProgress, [0, 1], [0, 200]);
   const scale = useTransform(scrollYProgress, [0, 1], [1, 1.15]);
-  const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0]);
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center pt-24 pb-16 overflow-hidden noise">
@@ -63,7 +62,7 @@ function Hero() {
       <Particles count={30} />
       <div className="absolute inset-0 grid-bg opacity-40 pointer-events-none" />
 
-      <motion.div style={{ opacity }} className="container mx-auto px-5 relative z-10 grid lg:grid-cols-12 gap-10 items-center">
+      <div className="container mx-auto px-5 relative z-10 grid lg:grid-cols-12 gap-10 items-center">
         <div className="lg:col-span-7">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -141,7 +140,7 @@ function Hero() {
             </motion.div>
           ))}
         </div>
-      </motion.div>
+      </div>
 
       <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-muted-foreground">
         <span className="font-cond uppercase tracking-[0.4em] text-[10px]">Scroll</span>
