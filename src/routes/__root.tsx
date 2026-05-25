@@ -9,6 +9,10 @@ import {
 } from "@tanstack/react-router";
 
 import appCss from "../styles.css?url";
+import { Header } from "@/components/site/Header";
+import { Footer } from "@/components/site/Footer";
+import { StickyWhatsApp } from "@/components/site/StickyWhatsApp";
+import { Toaster } from "@/components/ui/sonner";
 
 function NotFoundComponent() {
   return (
@@ -72,19 +76,38 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "Camden Auto Detail Experts USA — Miami Mobile Car Detailing" },
+      { name: "description", content: "Premium mobile car detailing in Miami, FL. Ceramic coating, paint correction, interior deep cleaning. We don't just clean — we transform." },
+      { name: "author", content: "Camden Auto Detail Experts" },
+      { property: "og:site_name", content: "Camden Auto Detail Experts USA — Miami" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
-      { name: "twitter:site", content: "@Lovable" },
+      { name: "theme-color", content: "#0a0a0a" },
     ],
     links: [
       {
         rel: "stylesheet",
         href: appCss,
+      },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "LocalBusiness",
+          name: "Camden Auto Detail Experts USA",
+          image: "/og.jpg",
+          telephone: "+1-305-555-0199",
+          priceRange: "$$$",
+          areaServed: "Miami, FL",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Miami",
+            addressRegion: "FL",
+            addressCountry: "US",
+          },
+        }),
       },
     ],
   }),
@@ -113,7 +136,15 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
-      <Outlet />
+      <div className="min-h-screen flex flex-col bg-background text-foreground">
+        <Header />
+        <main className="flex-1">
+          <Outlet />
+        </main>
+        <Footer />
+        <StickyWhatsApp />
+        <Toaster theme="dark" position="top-center" />
+      </div>
     </QueryClientProvider>
   );
 }
