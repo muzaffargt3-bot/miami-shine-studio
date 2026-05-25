@@ -300,7 +300,7 @@ function WhyUs() {
           {whyUs.map((w, i) => (
             <Reveal key={w.title} delay={i * 0.07}>
               <div className="glass p-7 rounded-sm h-full group hover:border-crimson/60 transition-all glow-red-hover relative overflow-hidden">
-                <div className="font-display text-6xl crimson-text/30 leading-none opacity-30 absolute top-2 right-3">0{i + 1}</div>
+                <div className="font-display text-6xl crimson-text leading-none opacity-20 absolute top-2 right-3">0{i + 1}</div>
                 <CheckCircle2 className="w-6 h-6 text-crimson mb-4" />
                 <div className="font-display text-lg tracking-widest text-silver mb-2">{w.title}</div>
                 <p className="text-sm text-muted-foreground leading-relaxed">{w.text}</p>
