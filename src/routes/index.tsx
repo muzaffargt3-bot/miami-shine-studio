@@ -420,4 +420,3 @@ function CTA() {
     </section>
   );
 }
-}
