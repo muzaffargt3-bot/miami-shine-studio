@@ -1,10 +1,5 @@
-import { motion, type Variants } from "framer-motion";
+import { motion } from "framer-motion";
 import { type ReactNode } from "react";
-
-const variants: Variants = {
-  hidden: { opacity: 0, y: 40 },
-  show: { opacity: 1, y: 0, transition: { duration: 0.8, ease: [0.22, 1, 0.36, 1] } },
-};
 
 export function Reveal({
   children,
@@ -17,11 +12,10 @@ export function Reveal({
 }) {
   return (
     <motion.div
-      initial="hidden"
-      whileInView="show"
-      viewport={{ once: true, amount: 0.2 }}
-      variants={variants}
-      transition={{ delay }}
+      initial={{ opacity: 0, y: 40 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.05, margin: "0px 0px -10% 0px" }}
+      transition={{ duration: 0.8, ease: [0.22, 1, 0.36, 1], delay }}
       className={className}
     >
       {children}
