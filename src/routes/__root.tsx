@@ -83,6 +83,12 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary" },
       { name: "theme-color", content: "#0a0a0a" },
+      { property: "og:title", content: "Camden Auto Detail Experts USA — Miami Mobile Car Detailing" },
+      { name: "twitter:title", content: "Camden Auto Detail Experts USA — Miami Mobile Car Detailing" },
+      { property: "og:description", content: "Premium mobile car detailing in Miami, FL. Ceramic coating, paint correction, interior deep cleaning. We don't just clean — we transform." },
+      { name: "twitter:description", content: "Premium mobile car detailing in Miami, FL. Ceramic coating, paint correction, interior deep cleaning. We don't just clean — we transform." },
+      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/08d1061e-f4da-4ee2-b1d7-6aa4f17902c8/id-preview-1fe18318--1f9ada4c-90cb-4cbe-8f92-cff07fc1dd1f.lovable.app-1779702691046.png" },
+      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/08d1061e-f4da-4ee2-b1d7-6aa4f17902c8/id-preview-1fe18318--1f9ada4c-90cb-4cbe-8f92-cff07fc1dd1f.lovable.app-1779702691046.png" },
     ],
     links: [
       {
